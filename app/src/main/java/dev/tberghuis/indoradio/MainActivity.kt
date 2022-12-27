@@ -49,7 +49,8 @@ class MainActivity : ComponentActivity() {
           Button(onClick = {
 
             //val url = "android.resource://$packageName/${R.raw.test}"
-            val url = "https://download.samplelib.com/mp3/sample-15s.mp3"
+//            val url = "https://download.samplelib.com/mp3/sample-15s.mp3"
+            val url = "https://c5.siar.us/proxy/ssfm/stream"
 
             play(url)
 

@@ -9,3 +9,7 @@ step 1 exoplayer hello world
 
 read docs https://developer.android.com/guide/topics/media/media3
 
+this was a lot of help
+https://stackoverflow.com/questions/74035158/android-media3-session-controller-playback-not-starting
+
+If you’d like to provide your own custom MediaNotification, you can override MediaSessionService.onUpdateNotification().
