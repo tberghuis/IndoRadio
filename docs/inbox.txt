@@ -1,1 +1,11 @@
 Request URL: https://c5.siar.us/proxy/ssfm/stream
+
+
+Player
+MediaSession
+MediaSessionService
+
+step 1 exoplayer hello world
+
+read docs https://developer.android.com/guide/topics/media/media3
+
