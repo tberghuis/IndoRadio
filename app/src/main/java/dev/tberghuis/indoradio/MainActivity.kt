@@ -148,9 +148,11 @@ class MainActivity : ComponentActivity() {
     log("play($url)")
     log("before=${getStateName(controller.playbackState)}")
 
-//    controller.setMediaItem(MediaItem.fromUri(url))
+    val mediaMetadata = MediaMetadata.Builder().setTitle("Suara Surabaya Radio").build()
 
-    val media = MediaItem.Builder().setMediaId(url).build()
+    val media = MediaItem.Builder().setMediaId(url)
+      .setMediaMetadata(mediaMetadata)
+      .build()
     controller.setMediaItem(media)
 
     controller.prepare()

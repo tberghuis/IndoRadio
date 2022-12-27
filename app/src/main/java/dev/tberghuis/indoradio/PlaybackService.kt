@@ -1,6 +1,5 @@
 package dev.tberghuis.indoradio
 
-import android.os.Binder
 import androidx.media3.common.MediaItem
 import androidx.media3.session.MediaSession
 import androidx.media3.exoplayer.ExoPlayer
@@ -8,8 +7,10 @@ import androidx.media3.session.MediaSessionService
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 
-
 class PlaybackService : MediaSessionService(), MediaSession.Callback {
+//  override fun onUpdateNotification(session: MediaSession) {
+//    super.onUpdateNotification(session)
+//  }
 
   private var mediaSession: MediaSession? = null
 
