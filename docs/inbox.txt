@@ -1,16 +1,15 @@
 Request URL: https://c5.siar.us/proxy/ssfm/stream
 
-
-Player
-MediaSession
-MediaSessionService
-
-step 1 exoplayer hello world
-
-read docs https://developer.android.com/guide/topics/media/media3
-
 this was a lot of help
 https://stackoverflow.com/questions/74035158/android-media3-session-controller-playback-not-starting
 
 https://developer.android.com/guide/topics/media/media3/getting-started/playing-in-background
 If you’d like to provide your own custom MediaNotification, you can override MediaSessionService.onUpdateNotification().
+
+next task, icon
+just play and stop button
+notification title
+release build
+user dad testing
+
+... refactor code ...
