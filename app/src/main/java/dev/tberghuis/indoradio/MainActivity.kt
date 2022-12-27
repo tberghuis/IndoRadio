@@ -76,6 +76,14 @@ class MainActivity : ComponentActivity() {
               }) {
                 Text(text = "Play")
               }
+
+              Button(onClick = {
+                playerStop()
+              }) {
+                Text(text = "Stop")
+              }
+
+
             }
           }
 
@@ -149,6 +157,12 @@ class MainActivity : ComponentActivity() {
     controller.play()
     log("after=${getStateName(controller.playbackState)}")
   }
+
+
+  private fun playerStop() {
+    controller.stop()
+  }
+
 
   private fun getStateName(i: Int): String? {
     return when (i) {
