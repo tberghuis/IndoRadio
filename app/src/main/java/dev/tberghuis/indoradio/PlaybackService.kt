@@ -1,5 +1,6 @@
 package dev.tberghuis.indoradio
 
+import android.os.Binder
 import androidx.media3.common.MediaItem
 import androidx.media3.session.MediaSession
 import androidx.media3.exoplayer.ExoPlayer
@@ -8,22 +9,18 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 
 
-// Extend MediaSessionService
 class PlaybackService : MediaSessionService(), MediaSession.Callback {
+
   private var mediaSession: MediaSession? = null
 
-  // Create your Player and MediaSession in the onCreate lifecycle event
   override fun onCreate() {
     super.onCreate()
     val player = ExoPlayer.Builder(this).build()
-    mediaSession = MediaSession.Builder(this, player).build()
+    mediaSession = MediaSession.Builder(this, player).setCallback(this).build()
   }
 
-  // Return a MediaSession to link with the MediaController that is making
-  // this request.
   override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaSession? =
     mediaSession
-
 
   override fun onDestroy() {
     mediaSession?.run {
@@ -34,7 +31,6 @@ class PlaybackService : MediaSessionService(), MediaSession.Callback {
     super.onDestroy()
   }
 
-
   override fun onAddMediaItems(
     mediaSession: MediaSession,
     controller: MediaSession.ControllerInfo,
@@ -44,5 +40,4 @@ class PlaybackService : MediaSessionService(), MediaSession.Callback {
       mediaItems.map { it.buildUpon().setUri(it.mediaId).build() }.toMutableList()
     return Futures.immediateFuture(updatedMediaItems)
   }
-
 }
