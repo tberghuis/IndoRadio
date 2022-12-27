@@ -9,8 +9,12 @@ import android.os.IBinder
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -55,30 +59,27 @@ class MainActivity : ComponentActivity() {
 
 
           ) { paddingValues ->
-          Box(
-            contentAlignment = Alignment.Center,
+
+          Column(
             modifier = Modifier
-              .fillMaxSize()
               .padding(paddingValues)
+              .fillMaxSize(),
+            verticalArrangement = Arrangement.Center
           ) {
-
-            Button(onClick = {
-
-              //val url = "android.resource://$packageName/${R.raw.test}"
-//            val url = "https://download.samplelib.com/mp3/sample-15s.mp3"
-              val url = "https://c5.siar.us/proxy/ssfm/stream"
-
-              play(url)
-
-            }) {
-              Text(text = "Play")
+            Row(
+              modifier = Modifier.fillMaxWidth(),
+              horizontalArrangement = Arrangement.Center
+            ) {
+              Button(onClick = {
+                val url = "https://c5.siar.us/proxy/ssfm/stream"
+                play(url)
+              }) {
+                Text(text = "Play")
+              }
             }
-
           }
 
         }
-
-
       }
     }
   }
